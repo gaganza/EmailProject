@@ -338,7 +338,7 @@ def GetAttachments(service, user_id, msg_id):
                  path = ''.join([store_dir, part['filename']])
                  with open(path, 'w') as f:
                      f.write(file_data)
-                 SendMessage(service, "me", CreateMessage("Rasp Pi", "5593894857@txt.att.net", "File Downloaded", "The file " + str(part.get('filename')) + " was downloaded"))
+                 SendMessage(service, "me", CreateMessage("Rasp Pi", "XXXXXXXXXX@txt.att.net", "File Downloaded", "The file " + str(part.get('filename')) + " was downloaded"))
 
 
    except errors.HttpError as error:
@@ -372,7 +372,7 @@ def main():
 
    secret = random.randint(0, 9999)
    
-   SendMessage(service, "me", CreateMessage("Gaston", "5593894857@txt.att.net", "New Code", str(secret)))
+   SendMessage(service, "me", CreateMessage("NAME", "XXXXXXXXXX@txt.att.net", "New Code", str(secret)))
 
    while(True):
       for msg in msgs:
@@ -386,7 +386,7 @@ def main():
                      ModifyMessage(service, 'me', msg['id'], batch)
                      GetAttachments(service, 'me', msg['id'])
                      secret = random.randint(0, 9999)
-                     SendMessage(service, "me", CreateMessage("Rasp Pi", "5593894857@txt.att.net", "New Code", str(secret)))
+                     SendMessage(service, "me", CreateMessage("Rasp Pi", "XXXXXXXXXX@txt.att.net", "New Code", str(secret)))
                except ValueError:
                   pass
 
